@@ -1,8 +1,4 @@
----
-layout: post
-title: "Markdown 写作测试"
-date: 2025-11-27
----
+# Markdown 写作测试
 
 这是一篇测试文章，用来展示 Markdown 的渲染效果。
 
