@@ -1,0 +1,82 @@
+/* Background image for the whole site */
+body {
+    background-image: url('/logo.jpg');
+    background-size: cover;
+    background-position: right center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/* Add a semi-transparent overlay so text is readable */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(30, 30, 32, 0.75);
+    z-index: -1;
+}
+
+/* Make the main content area have a subtle background */
+.VPContent {
+    background: transparent !important;
+}
+
+/* Sidebar styling */
+.VPSidebar {
+    background: rgba(30, 30, 32, 0.9) !important;
+    backdrop-filter: blur(8px);
+}
+
+/* Doc page styling */
+.VPDoc .container {
+    background: rgba(30, 30, 32, 0.85);
+    border-radius: 12px;
+    padding: 24px;
+    padding-top: 48px;
+    margin: 24px;
+    margin-top: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
+}
+
+/* Doc page title styling */
+.VPDoc h1 {
+    font-size: 2.5rem !important;
+    margin-top: 16px !important;
+    margin-bottom: 24px !important;
+}
+
+/* Navbar styling */
+.VPNav {
+    background: rgba(30, 30, 32, 0.85) !important;
+    backdrop-filter: blur(12px);
+}
+
+.VPNavBar {
+    background: transparent !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Make home page full width without sidebar */
+.is-home .VPSidebar {
+    display: none !important;
+}
+
+.is-home .VPContent {
+    padding-left: 0 !important;
+}
+
+/* Outline on the right */
+.VPDocAside {
+    background: transparent !important;
+}
+
+.VPDocAsideOutline {
+    background: rgba(30, 30, 32, 0.9);
+    border-radius: 8px;
+    padding: 12px;
+    backdrop-filter: blur(8px);
+}
