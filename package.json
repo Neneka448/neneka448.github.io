@@ -1,5 +1,5 @@
 {
-    "name": "neneka448-blog",
+    "name": "SoyoAnon-blog",
     "version": "1.0.0",
     "scripts": {
         "docs:dev": "vitepress dev docs",

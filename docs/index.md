@@ -3,33 +3,21 @@ layout: page
 ---
 
 <script setup>
-import { ref } from 'vue'
-
-const posts = [
-  {
-    title: '关于我与这个博客',
-    date: '2025-11-28',
-    description: '你好！我是 Neneka448。这是我使用 GitHub Pages 和 VitePress 搭建的个人博客。',
-    link: '/posts/about-me'
-  },
-  {
-    title: 'Markdown 写作测试',
-    date: '2025-11-27',
-    description: '这是一篇测试文章，用来展示 Markdown 的渲染效果。',
-    link: '/posts/markdown-test'
-  }
-]
+import { data as posts } from './posts.data.mts'
 </script>
 
 <div class="blog-container">
   <div class="blog-header">
-    <h1>Neneka448's Blog</h1>
-    <p class="tagline">欢迎来到我的博客，这里是我记录技术、生活和随想的地方</p>
+    <h1>SoyoAnon's Blog</h1>
+    <p class="tagline">"Stay hungry, stay foolish."</p>
   </div>
   
   <div class="posts-grid">
-    <a v-for="post in posts" :key="post.title" :href="post.link" class="post-card">
-      <div class="post-date">{{ post.date }}</div>
+    <a v-for="post in posts" :key="post.link" :href="post.link" class="post-card">
+      <div class="post-meta">
+        <span class="post-category">{{ post.category }}</span>
+        <span class="post-date">{{ post.date }}</span>
+      </div>
       <h2 class="post-title">{{ post.title }}</h2>
       <p class="post-desc">{{ post.description }}</p>
       <span class="read-more">阅读全文 →</span>
@@ -92,10 +80,25 @@ height: 3rem;
   border-color: var(--vp-c-brand);
 }
 
+.post-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.post-category {
+  font-size: 0.75rem;
+  color: var(--vp-c-brand);
+  background: var(--vp-c-brand-soft);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
 .post-date {
   font-size: 0.85rem;
   color: var(--vp-c-text-3);
-  margin-bottom: 8px;
 }
 
 .post-title {
