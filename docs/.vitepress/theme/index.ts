@@ -1,4 +1,14 @@
 import DefaultTheme from 'vitepress/theme'
-import './custom.css'
+import imageViewer from 'vitepress-plugin-image-viewer'
+import { useRoute } from 'vitepress'
 
-export default DefaultTheme
+import './custom.css'
+import 'viewerjs/dist/viewer.min.css'
+
+export default {
+    ...DefaultTheme,
+    setup() {
+        const route = useRoute()
+        imageViewer(route)
+    }
+}

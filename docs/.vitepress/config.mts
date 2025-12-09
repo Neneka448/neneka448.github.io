@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 import fs from 'fs'
 import path from 'path'
+import footnote from 'markdown-it-footnote'
 
 // 分类配置
 const categories = {
@@ -47,6 +48,16 @@ function getPostsSidebar() {
 export default defineConfig({
     title: "SoyoAnon's Blog",
     description: "记录技术、生活和随想",
+    appearance: 'dark',
+    markdown: {
+        math: true,
+        config: (md) => {
+            md.use(footnote)
+        }
+    },
+    head: [
+        ['link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css' }]
+    ],
     themeConfig: {
         nav: [
             { text: '首页', link: '/' },
@@ -61,7 +72,8 @@ export default defineConfig({
             { icon: 'github', link: 'https://github.com/Neneka448' }
         ],
         outline: {
-            label: '页面导航'
+            label: '页面导航',
+            level: [2, 3]
         }
     }
 })

@@ -1,0 +1,5 @@
+# 理解 Attention
+
+:::tip 摘要
+[NEURAL MACHINE TRANSLATION BY JOINTLY LEARNING TO ALIGN AND TRANSLATE](https://arxiv.org/pdf/1409.0473.pdf)
+:::
